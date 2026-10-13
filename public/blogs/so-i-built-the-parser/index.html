@@ -12,7 +12,7 @@
 <meta property="og:title" content="So I built the parser">
 <meta property="og:description" content="I promised a boring, perfect parser. So I built Statement2CSV: offline PDFs in, Money Manager CSV out, with local AI only writing labels.">
 <meta property="og:url" content="https://yashpatil.dev/blogs/so-i-built-the-parser/">
-<meta property="og:image" content="https://yashpatil.dev/avatar.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Real-Yash/yashpatil.dev@main/public/avatar.jpg">
 <meta property="article:published_time" content="2026-10-13">
 <meta property="article:author" content="Yash Patil">
 <meta name="twitter:card" content="summary">
@@ -129,7 +129,7 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
     <h1>So I built the parser</h1>
     <p class="lede">I promised a boring, perfect parser. So I built Statement2CSV: offline PDFs in, Money Manager CSV out, with local AI only writing labels.</p>
     <figure class="shot">
-      <img src="/blogs/assets/parser-cover.svg" alt="Cover art for So I built the parser: PDF.js local, rules plus regex, Money Manager TSV" loading="eager">
+      <img src="https://cdn.jsdelivr.net/gh/Real-Yash/yashpatil.dev@main/public/blogs/assets/parser-cover.svg" alt="Cover art for So I built the parser: PDF.js local, rules plus regex, Money Manager TSV" loading="eager">
     </figure>
     <div class="post-body">
       <p>Last post ended with a promise: my CSV importer is going to be a parser. Boring. Perfect. So I built it.</p>
@@ -137,18 +137,18 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
       <p>Also, to be clear: this is not a product. It is not a SaaS, not a launch, not a tool I am shipping to anyone. It is a scrappy little page I made for myself, because I had seven months of missing expenses and no patience. I call it Statement2CSV. I drop in my statements, review the transactions in a table, export a file, import it into Money Manager. That is the whole thing.</p>
       <p>The first decision was the only one that really mattered: everything runs offline. The PDF never leaves my browser. These are my bank statements, the most sensitive files I own, and I was not about to upload them to someone&rsquo;s server so a model could read my rent payments. PDF.js decrypts and parses everything locally. That one constraint shaped the whole build.</p>
       <figure class="shot">
-        <img src="/blogs/assets/statement2csv.png" alt="Statement2CSV app: upload locked statements, export for Money Manager, review transactions table" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <img src="https://cdn.jsdelivr.net/gh/Real-Yash/yashpatil.dev@main/public/blogs/assets/statement2csv.png" alt="Statement2CSV app: upload locked statements, export for Money Manager, review transactions table" loading="lazy" onerror="this.closest('figure').style.display='none'">
         <figcaption>Statement2CSV: upload locked statements, review the table, export. 100% offline, PDF never leaves the browser.</figcaption>
       </figure>
       <p>The parsing itself is pure 2010. No model touches the numbers. My three banks all lay out their statements differently, so the parser detects which bank a statement came from and applies the right rules for that format. Dates, descriptions, debits, credits, balances. Rules and regex. The stuff I almost skipped.</p>
       <figure class="shot">
-        <img src="/blogs/assets/statement2csv-flow.svg" alt="Statement2CSV pipeline: bank PDFs to PDF.js to rules parser to review table to export, with local AI as a labels-only sidecar" loading="lazy">
+        <img src="https://cdn.jsdelivr.net/gh/Real-Yash/yashpatil.dev@main/public/blogs/assets/statement2csv-flow.svg" alt="Statement2CSV pipeline: bank PDFs to PDF.js to rules parser to review table to export, with local AI as a labels-only sidecar" loading="lazy">
         <figcaption>The pipeline. Green boxes are the deterministic parser. The amber dashed box is the AI sidecar: labels only, never numbers.</figcaption>
       </figure>
       <p>Then the export. I needed it to write exactly what Money Manager expects for its Excel backup import: Date, Account, Category, Subcategory, Note, Amount, Income/Expense, Description, with dates as MM/DD/YYYY. In the app it is More, then Backup, then Import Excel File, pick the file, done. I also made it spit out a generic CSV with debit/credit/balance columns, because future me will probably want this data in a spreadsheet too.</p>
       <p>Now the part you are waiting for: yes, there is AI in it. Two small local models, Qwen3 4B and Llama, running through Ollama on my own machine. But they never touch the parsing. They only write better remarks. Bank descriptions look like &ldquo;UPI/412983746501/P2A/AMZN&rdquo; and I will not remember what that was three months from now, so the models turn them into human-readable labels. Keyword rules stay as the fallback, and anything the model is not confident about gets flagged amber for me to review by hand. The AI is a label maker. The parser does the work.</p>
       <figure class="shot">
-        <img src="/blogs/assets/statement2csv-stats.svg" alt="Statement2CSV results: 1381 transactions, money in 10,09,709.67 rupees, money out 8,01,008.32 rupees, period April to October 2026" loading="lazy">
+        <img src="https://cdn.jsdelivr.net/gh/Real-Yash/yashpatil.dev@main/public/blogs/assets/statement2csv-stats.svg" alt="Statement2CSV results: 1381 transactions, money in 10,09,709.67 rupees, money out 8,01,008.32 rupees, period April to October 2026" loading="lazy">
         <figcaption>Seven months recovered: 1381 transactions across three banks, one clean import file. My expense history is back.</figcaption>
       </figure>
       <p>And that is the distinction I was trying to make in the last post. Vibe-coding some UI scaffolding for myself and letting a local model rewrite &ldquo;UPI/P2M/...&rdquo; into &ldquo;groceries&rdquo; is not slop. Slop is when you do not understand the problem and you rent a supercomputer to have the understanding for you. I understood the problem because I lived it, from the May phone wipe to the locked PDF to the local model that could not read it. The parser is mine. The AI just did the chores.</p>
