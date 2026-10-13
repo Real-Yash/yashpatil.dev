@@ -1,0 +1,426 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yash Patil — Digital Sketchbook Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&amp;family=Patrick+Hand&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #fdfaf6;
+      --ink: #1a1a1a;
+      --orange: #fb923c;
+      --yellow: #fef08a;
+      --red: #ef4444;
+      --blue: #60a5fa;
+      --wobbly-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    }
+
+    * {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>'), auto;
+    }
+
+    body {
+      font-family: 'Patrick Hand', cursive;
+      color: var(--ink);
+      background-color: var(--paper);
+      background-image: radial-gradient(#e5e0d8 1.5px, transparent 0);
+      background-size: 32px 32px;
+    }
+
+    .heading-font {
+      font-family: 'Kalam', cursive;
+    }
+
+    .wobbly-border {
+      border: 3px solid var(--ink);
+      border-radius: var(--wobbly-radius);
+    }
+
+    .hard-shadow {
+      box-shadow: 6px 6px 0 var(--ink);
+      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .hard-shadow:hover {
+      box-shadow: 3px 3px 0 var(--ink);
+      transform: translate(2px, 2px);
+    }
+
+    .hard-shadow:active {
+      box-shadow: 0px 0px 0 var(--ink);
+      transform: translate(6px, 6px);
+    }
+
+    .tape {
+      width: 80px;
+      height: 25px;
+      background: rgba(229, 224, 216, 0.5);
+      backdrop-filter: blur(2px);
+      transform: rotate(-3deg);
+      position: absolute;
+      z-index: 10;
+    }
+
+    .thumbtack {
+      width: 14px;
+      height: 14px;
+      background: var(--red);
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+      box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+      position: absolute;
+    }
+
+    .scribble-underline {
+      position: relative;
+    }
+
+    .scribble-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='10' viewBox='0 0 100 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 5C20 2 40 8 60 5C80 2 98 8 98 8' stroke='%231a1a1a' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+      background-size: contain;
+    }
+
+    .wavy-link:hover {
+      text-decoration: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='10' viewBox='0 0 100 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 5Q12.5 0 25 5T50 5T75 5T100 5' stroke='%23fb923c' stroke-width='2'/%3E%3C/svg%3E");
+      background-position: bottom;
+      background-repeat: repeat-x;
+      padding-bottom: 4px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(2deg); }
+    }
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .dashed-divider {
+      border: none;
+      height: 3px;
+      background-image: linear-gradient(to right, #1a1a1a 40%, rgba(255, 255, 255, 0) 20%);
+      background-position: bottom;
+      background-size: 15px 3px;
+      background-repeat: repeat-x;
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen relative overflow-x-hidden" data-sd-id="1">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-4xl" data-sd-id="2">
+      <div class="bg-white wobbly-border hard-shadow px-8 py-4 flex items-center justify-between" data-sd-id="3">
+        <a href="#top" id="nav-logo" class="heading-font text-2xl font-bold" data-sd-id="4">yashpatil.dev</a>
+        <div class="hidden md:flex gap-8 text-xl" data-sd-id="5">
+          <a href="#portfolio" id="nav-portfolio" class="wavy-link" data-sd-id="6">Portfolio</a>
+          <a href="#toolchain" id="nav-toolchain" class="wavy-link" data-sd-id="7">Toolchain</a>
+          <a href="#hardware" id="nav-hardware" class="wavy-link" data-sd-id="8">Hardware</a>
+          <a href="#contact" id="nav-contact" class="wavy-link" data-sd-id="9">Contact</a>
+        </div>
+        <div class="md:hidden" data-sd-id="10">
+           <iconify-icon icon="lucide:menu" class="text-3xl"></iconify-icon>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-48 pb-24 px-6" data-sd-id="11">
+      <div class="max-center max-w-5xl mx-auto text-center relative" data-sd-id="12">
+        <!-- Floating Decorations -->
+        <div class="absolute -top-12 -left-12 animate-float hidden lg:block opacity-60" data-sd-id="13">
+          <iconify-icon icon="lucide:pencil" class="text-6xl text-gray-400 -rotate-45"></iconify-icon>
+        </div>
+        <div class="absolute top-24 -right-12 animate-float hidden lg:block opacity-60" style="animation-delay: -2s" data-sd-id="14">
+          <iconify-icon icon="lucide:code" class="text-6xl text-gray-400 rotate-12"></iconify-icon>
+        </div>
+
+        <h1 class="heading-font text-6xl md:text-8xl lg:text-9xl mb-6" data-sd-id="15">
+          Hi, I'm <span class="scribble-underline" data-sd-id="16">Yash.</span>
+        </h1>
+        <p class="text-2xl md:text-3xl max-w-2xl mx-auto mb-12 leading-relaxed" data-sd-id="17">
+          I build systems, tools, and experiences. Exploring the intersection of DevOps, Backend Infrastructure, and Machine Learning.
+        </p>
+        
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6" data-sd-id="18">
+          <a href="#contact" id="cta-contact" class="w-full md:w-auto bg-orange-400 wobbly-border hard-shadow px-10 py-4 text-2xl heading-font" data-sd-id="19">
+            Start a Conversation
+          </a>
+          <a href="https://github.com/real-Yash" id="cta-repos" target="_blank" rel="noreferrer" class="w-full md:w-auto bg-white wobbly-border hard-shadow px-10 py-4 text-2xl heading-font" data-sd-id="20">
+            View Repositories
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="dashed-divider max-w-6xl mx-auto my-12">
+
+    <!-- System Diagnostics -->
+    <section id="portfolio" class="py-20 px-6" data-sd-id="21">
+      <div class="max-w-6xl mx-auto" data-sd-id="22">
+        <div class="flex flex-col md:flex-row items-center justify-between mb-16" data-sd-id="23">
+          <h2 class="heading-font text-5xl" data-sd-id="24">System Diagnostics</h2>
+          <p class="text-xl md:text-2xl text-gray-600 italic" data-sd-id="25">“Build first, ask questions later.”</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10" data-sd-id="26">
+          <!-- Current Focus -->
+          <div class="bg-white wobbly-border hard-shadow p-8 rotate-1" data-sd-id="27">
+            <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center mb-6" data-sd-id="28">
+              <iconify-icon icon="lucide:zap" class="text-2xl"></iconify-icon>
+            </div>
+            <h3 class="heading-font text-3xl mb-4" data-sd-id="29">Current Focus</h3>
+            <p class="text-xl" data-sd-id="30">Optimizing distributed system observability and building custom CLI tools for dev workflows.</p>
+          </div>
+
+          <!-- Core Areas -->
+          <div class="bg-white wobbly-border hard-shadow p-8 -rotate-1" data-sd-id="31">
+            <div class="w-12 h-12 bg-orange-200 rounded-full flex items-center justify-center mb-6" data-sd-id="32">
+              <iconify-icon icon="lucide:layers" class="text-2xl"></iconify-icon>
+            </div>
+            <h3 class="heading-font text-3xl mb-4" data-sd-id="33">Core Areas</h3>
+            <p class="text-xl" data-sd-id="34">Systems Design, Intelligent Systems, and robust Backend Infrastructure.</p>
+          </div>
+
+          <!-- Philosophy -->
+          <div class="bg-white wobbly-border hard-shadow p-8 rotate-2" data-sd-id="35">
+            <div class="w-12 h-12 bg-yellow-200 rounded-full flex items-center justify-center mb-6" data-sd-id="36">
+              <iconify-icon icon="lucide:heart" class="text-2xl"></iconify-icon>
+            </div>
+            <h3 class="heading-font text-3xl mb-4" data-sd-id="37">Philosophy</h3>
+            <p class="text-xl" data-sd-id="38">Focusing on reliability and developer ergonomics. Automation is the only way forward.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toolchain Log -->
+    <section id="toolchain" class="py-20 px-6 bg-white/30" data-sd-id="39">
+      <div class="max-w-6xl mx-auto" data-sd-id="40">
+        <h2 class="heading-font text-5xl mb-16 text-center" data-sd-id="41">The Toolchain Log</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6" data-sd-id="42">
+          <!-- Tool Card -->
+          <div class="bg-white wobbly-border hard-shadow p-6 flex flex-col items-center text-center" data-sd-id="43">
+            <iconify-icon icon="simple-icons:linux" class="text-4xl mb-3"></iconify-icon>
+            <span class="font-bold uppercase tracking-widest text-sm" data-sd-id="44">OS</span>
+            <p class="text-lg" data-sd-id="45">Arch / Debian</p>
+          </div>
+
+          <div class="bg-white wobbly-border hard-shadow p-6 flex flex-col items-center text-center -rotate-2" data-sd-id="46">
+            <iconify-icon icon="simple-icons:neovim" class="text-4xl mb-3"></iconify-icon>
+            <span class="font-bold uppercase tracking-widest text-sm" data-sd-id="47">Editor</span>
+            <p class="text-lg" data-sd-id="48">Neovim (Lua)</p>
+          </div>
+
+          <div class="bg-white wobbly-border hard-shadow p-6 flex flex-col items-center text-center rotate-1" data-sd-id="49">
+            <iconify-icon icon="simple-icons:rust" class="text-4xl mb-3"></iconify-icon>
+            <span class="font-bold uppercase tracking-widest text-sm" data-sd-id="50">Languages</span>
+            <p class="text-lg" data-sd-id="51">Rust / Go / Py</p>
+          </div>
+
+          <div class="bg-white wobbly-border hard-shadow p-6 flex flex-col items-center text-center" data-sd-id="52">
+            <iconify-icon icon="simple-icons:docker" class="text-4xl mb-3"></iconify-icon>
+            <span class="font-bold uppercase tracking-widest text-sm" data-sd-id="53">DevOps</span>
+            <p class="text-lg" data-sd-id="54">Docker / K8s</p>
+          </div>
+
+          <div class="bg-white wobbly-border hard-shadow p-6 flex flex-col items-center text-center rotate-2" data-sd-id="55">
+            <iconify-icon icon="simple-icons:terraform" class="text-4xl mb-3"></iconify-icon>
+            <span class="font-bold uppercase tracking-widest text-sm" data-sd-id="56">Infra</span>
+            <p class="text-lg" data-sd-id="57">Terraform / AWS</p>
+          </div>
+
+          <div class="bg-white wobbly-border hard-shadow p-6 flex flex-col items-center text-center -rotate-1" data-sd-id="58">
+            <iconify-icon icon="simple-icons:postgresql" class="text-4xl mb-3"></iconify-icon>
+            <span class="font-bold uppercase tracking-widest text-sm" data-sd-id="59">Databases</span>
+            <p class="text-lg" data-sd-id="60">Postgres / Redis</p>
+          </div>
+
+          <div class="bg-white wobbly-border hard-shadow p-6 flex flex-col items-center text-center" data-sd-id="61">
+            <iconify-icon icon="simple-icons:nginx" class="text-4xl mb-3"></iconify-icon>
+            <span class="font-bold uppercase tracking-widest text-sm" data-sd-id="62">Networking</span>
+            <p class="text-lg" data-sd-id="63">Nginx / Wireguard</p>
+          </div>
+
+          <div class="bg-white wobbly-border hard-shadow p-6 flex flex-col items-center text-center -rotate-3" data-sd-id="64">
+            <iconify-icon icon="simple-icons:fastapi" class="text-4xl mb-3"></iconify-icon>
+            <span class="font-bold uppercase tracking-widest text-sm" data-sd-id="65">APIs</span>
+            <p class="text-lg" data-sd-id="66">gRPC / REST</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Terminal Interaction -->
+    <section class="py-20 px-6" data-sd-id="67">
+      <div class="max-w-4xl mx-auto" data-sd-id="68">
+        <div class="bg-[#1a1a1a] text-white wobbly-border hard-shadow p-8 min-h-[300px] font-mono relative overflow-hidden" data-sd-id="69">
+          <div class="flex gap-2 mb-6" data-sd-id="70">
+            <div class="w-3 h-3 rounded-full bg-red-500" data-sd-id="71"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500" data-sd-id="72"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500" data-sd-id="73"></div>
+          </div>
+          <div id="terminal-output" class="space-y-4 max-h-80 overflow-y-auto pr-2" role="log" aria-live="polite" data-sd-id="74">
+            <p class="text-green-400" data-sd-id="75">yash@yashpatil.dev:~$ <span class="text-white" data-sd-id="76">whoami</span></p>
+            <p data-sd-id="77">I am a software tinkerer who loves low-level details. Currently engineering high-performance systems and playing with ML models on local hardware.</p>
+            <p class="text-green-400" data-sd-id="78">yash@yashpatil.dev:~$ <span class="text-white" data-sd-id="79">ls ./interests</span></p>
+            <p class="text-blue-400 flex flex-wrap gap-4" data-sd-id="80">
+              <span data-sd-id="81">distributed-systems/</span>
+              <span data-sd-id="82">eBPF-tools/</span>
+              <span data-sd-id="83">transformer-arch/</span>
+              <span data-sd-id="84">homelab-automation/</span>
+            </p>
+            <p class="text-gray-400 text-sm" data-sd-id="85">Type <span class="text-white">help</span> to see available commands.</p>
+          </div>
+          <form id="terminal-form" class="mt-4 flex items-center gap-2 text-green-400" autocomplete="off">
+            <label class="sr-only" for="terminal-input">Terminal command</label>
+            <span aria-hidden="true">yash@yashpatil.dev:~$</span>
+            <input id="terminal-input" class="min-w-0 flex-1 bg-transparent text-white outline-none" type="text" spellcheck="false" autocapitalize="none" placeholder="try: help" aria-label="Terminal command">
+          </form>
+          <!-- Decorative Tape over terminal -->
+          <div class="tape -top-2 -right-4 opacity-70" data-sd-id="87"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hardware Trust List (Polaroids) -->
+    <section id="hardware" class="py-20 px-6" data-sd-id="88">
+      <div class="max-w-6xl mx-auto" data-sd-id="89">
+        <h2 class="heading-font text-5xl mb-16" data-sd-id="90">Hardware Trust List</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16" data-sd-id="91">
+          <!-- Polaroid 1 -->
+          <div class="relative" data-sd-id="92">
+            <div class="bg-white p-4 pt-4 pb-16 wobbly-border hard-shadow -rotate-2" data-sd-id="93">
+              <div class="aspect-video bg-gray-200 overflow-hidden relative" data-sd-id="94">
+                <img src="https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" alt="Workstation" class="w-full h-full object-cover" data-sd-id="95">
+                <div class="tape top-4 right-4 rotate-12" data-sd-id="96"></div>
+                <div class="thumbtack top-4 left-4" data-sd-id="97"></div>
+              </div>
+              <p class="mt-8 text-2xl text-center heading-font" data-sd-id="98">Main Workstation</p>
+              <p class="text-center text-gray-500" data-sd-id="99">AMD Ryzen 9 • 64GB RAM • RTX 4080</p>
+            </div>
+          </div>
+
+          <!-- Polaroid 2 -->
+          <div class="relative" data-sd-id="100">
+            <div class="bg-white p-4 pt-4 pb-16 wobbly-border hard-shadow rotate-3" data-sd-id="101">
+              <div class="aspect-video bg-gray-200 overflow-hidden relative" data-sd-id="102">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&amp;w=2073&amp;auto=format&amp;fit=crop" alt="Home Lab" class="w-full h-full object-cover" data-sd-id="103">
+                <div class="tape -bottom-2 -left-4 -rotate-45" data-sd-id="104"></div>
+                <div class="thumbtack top-4 right-4" data-sd-id="105"></div>
+              </div>
+              <p class="mt-8 text-2xl text-center heading-font" data-sd-id="106">The Homelab</p>
+              <p class="text-center text-gray-500" data-sd-id="107">Cluster of 3x OptiPlex • Proxmox • 12TB NAS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form (Sticky Note) -->
+    <section id="contact" class="py-24 px-6" data-sd-id="108">
+      <div class="max-w-2xl mx-auto" data-sd-id="109">
+        <div class="bg-[#fef9c3] p-12 wobbly-border hard-shadow relative" data-sd-id="110">
+          <div class="thumbtack -top-4 left-1/2 -translate-x-1/2" data-sd-id="111"></div>
+          <h2 class="heading-font text-4xl mb-8 text-center" data-sd-id="112">Leave a Note</h2>
+          <form class="space-y-6" data-sd-id="113">
+            <div data-sd-id="114">
+              <label class="block text-xl mb-2 heading-font" data-sd-id="115">Your Name</label>
+              <input type="text" class="w-full bg-transparent border-b-2 border-ink py-2 focus:outline-none placeholder:text-gray-400" placeholder="Enter your name..." data-sd-id="116">
+            </div>
+            <div data-sd-id="117">
+              <label class="block text-xl mb-2 heading-font" data-sd-id="118">Email Address</label>
+              <input type="email" class="w-full bg-transparent border-b-2 border-ink py-2 focus:outline-none placeholder:text-gray-400" placeholder="hello@example.com" data-sd-id="119">
+            </div>
+            <div data-sd-id="120">
+              <label class="block text-xl mb-2 heading-font" data-sd-id="121">Message</label>
+              <textarea rows="4" class="w-full bg-transparent border-b-2 border-ink py-2 focus:outline-none placeholder:text-gray-400 resize-none" placeholder="What's on your mind?" data-sd-id="122"></textarea>
+            </div>
+            <button type="submit" id="contact-submit-btn" class="w-full bg-ink text-white py-4 text-2xl heading-font rounded-sm hover:scale-[0.98] transition-transform" data-sd-id="123">
+              Pin Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-white/50" data-sd-id="124">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8" data-sd-id="125">
+        <div class="heading-font text-2xl font-bold" data-sd-id="126">yashpatil.dev</div>
+        <div class="flex gap-8 text-lg" data-sd-id="127">
+          <a href="https://github.com/real-Yash" id="footer-gh" target="_blank" rel="noreferrer" class="wavy-link" data-sd-id="128">GitHub</a>
+          <a href="https://www.linkedin.com/in/-yashpatil/" id="footer-li" target="_blank" rel="noreferrer" class="wavy-link" data-sd-id="129">LinkedIn</a>
+          <a href="https://x.com/yashbytes" id="footer-tw" target="_blank" rel="noreferrer" class="wavy-link" data-sd-id="130">X</a>
+        </div>
+        <div class="text-gray-500" data-sd-id="131">
+          © 2024 Yash Patil. Crafted with Ink and Code.
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Simple smooth scroll implementation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    const terminalForm = document.querySelector('#terminal-form');
+    const terminalInput = document.querySelector('#terminal-input');
+    const terminalOutput = document.querySelector('#terminal-output');
+    const terminalResponses = {
+      help: ['Available commands: help, whoami, ls, socials, contact, clear'],
+      whoami: ['I am a software tinkerer who loves low-level details.', 'Currently engineering high-performance systems and playing with ML models on local hardware.'],
+      ls: ['distributed-systems/', 'eBPF-tools/', 'transformer-arch/', 'homelab-automation/'],
+      socials: ['GitHub: github.com/real-Yash', 'X: x.com/yashbytes', 'LinkedIn: linkedin.com/in/-yashpatil/'],
+      contact: ['Scroll down to leave a note, or email via the contact form.']
+    };
+
+    const addTerminalLine = (text, className = '') => {
+      const line = document.createElement('p');
+      line.textContent = text;
+      if (className) line.className = className;
+      terminalOutput.append(line);
+    };
+
+    terminalForm?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const enteredCommand = terminalInput.value.trim();
+      const command = enteredCommand.toLowerCase().replace(/^ls(?:\s+\.\/interests|\s+interests)?$/, 'ls');
+      if (!enteredCommand) return;
+      addTerminalLine(`yash@yashpatil.dev:~$ ${enteredCommand}`, 'text-green-400');
+      terminalInput.value = '';
+      if (command === 'clear') {
+        terminalOutput.replaceChildren();
+      } else if (terminalResponses[command]) {
+        terminalResponses[command].forEach((line) => addTerminalLine(line, command === 'ls' ? 'text-blue-400' : ''));
+      } else {
+        addTerminalLine(`command not found: ${enteredCommand}. Type \"help\" for available commands.`, 'text-red-300');
+      }
+      terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    });
+    terminalInput?.addEventListener('focus', () => terminalInput.placeholder = 'type a command');
+    terminalOutput?.closest('.bg-[#1a1a1a]')?.addEventListener('click', () => terminalInput?.focus());
+  </script>
+
+
+</body></html>

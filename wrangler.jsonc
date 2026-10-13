@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "yash-portfolio",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-07-29",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "CONTACTS",
+      "database_name": "yash-portfolio",
+      "database_id": "936fc21d-2b1d-4086-aa01-e503979136e7"
+    }
+  ]
+}
