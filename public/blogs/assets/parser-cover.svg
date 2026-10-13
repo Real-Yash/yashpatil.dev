@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0b0d10"/>
+  <g fill="#141b25">
+    <circle cx="150" cy="540" r="200"/>
+    <circle cx="1080" cy="120" r="170"/>
+  </g>
+  <text x="80" y="105" font-family="monospace" font-size="25" fill="#8fd694">yashpatil.dev / blogs / post 002</text>
+  <text x="76" y="225" font-family="Verdana, sans-serif" font-size="76" font-weight="bold" fill="#e8edf2">So I built</text>
+  <text x="76" y="312" font-family="Verdana, sans-serif" font-size="76" font-weight="bold" fill="#e8edf2">the parser</text>
+  <text x="80" y="365" font-family="monospace" font-size="24" fill="#9aa6b4">Statement2CSV: offline PDFs in, clean CSV out</text>
+  <g font-family="monospace" font-size="22">
+    <rect x="80" y="415" width="300" height="60" rx="30" fill="#111419" stroke="#8fd694" stroke-width="2"/>
+    <text x="130" y="453" fill="#8fd694">PDF.js · local</text>
+    <rect x="400" y="415" width="310" height="60" rx="30" fill="#111419" stroke="#8fd694" stroke-width="2"/>
+    <text x="448" y="453" fill="#8fd694">rules + regex</text>
+    <rect x="730" y="415" width="390" height="60" rx="30" fill="#111419" stroke="#dfc078" stroke-width="2"/>
+    <text x="778" y="453" fill="#dfc078">Money Manager .tsv</text>
+  </g>
+  <text x="80" y="585" font-family="monospace" font-size="24" fill="#626e7d">boring. perfect. like I said.</text>
+</svg>

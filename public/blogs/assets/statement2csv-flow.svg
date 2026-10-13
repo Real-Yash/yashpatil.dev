@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560">
+  <rect width="1200" height="560" fill="#0b0d10"/>
+  <text x="60" y="60" font-family="monospace" font-size="24" fill="#8fd694">Statement2CSV · everything offline, nothing uploaded</text>
+  <g font-family="monospace" text-anchor="middle">
+    <rect x="30" y="100" width="190" height="130" rx="12" fill="#111419" stroke="#2b3442" stroke-width="2"/>
+    <text x="125" y="150" font-size="23" fill="#e8edf2">bank PDFs</text>
+    <text x="125" y="182" font-size="19" fill="#9aa6b4">locked · 3 banks</text>
+    <rect x="265" y="100" width="190" height="130" rx="12" fill="#111419" stroke="#2b3442" stroke-width="2"/>
+    <text x="360" y="150" font-size="23" fill="#e8edf2">PDF.js</text>
+    <text x="360" y="182" font-size="19" fill="#9aa6b4">decrypt + parse</text>
+    <text x="360" y="208" font-size="19" fill="#9aa6b4">in browser</text>
+    <rect x="500" y="100" width="190" height="130" rx="12" fill="#111419" stroke="#8fd694" stroke-width="2"/>
+    <text x="595" y="150" font-size="23" fill="#8fd694">rules parser</text>
+    <text x="595" y="182" font-size="19" fill="#9aa6b4">dates · amounts</text>
+    <text x="595" y="208" font-size="19" fill="#9aa6b4">regex per bank</text>
+    <rect x="735" y="100" width="190" height="130" rx="12" fill="#111419" stroke="#2b3442" stroke-width="2"/>
+    <text x="830" y="150" font-size="23" fill="#e8edf2">review table</text>
+    <text x="830" y="182" font-size="19" fill="#9aa6b4">edit · amber flags</text>
+    <rect x="970" y="100" width="190" height="130" rx="12" fill="#111419" stroke="#8fd694" stroke-width="2"/>
+    <text x="1065" y="150" font-size="23" fill="#8fd694">export</text>
+    <text x="1065" y="182" font-size="19" fill="#9aa6b4">.tsv + .csv</text>
+  </g>
+  <g stroke="#3a4452" stroke-width="2" fill="none">
+    <line x1="220" y1="165" x2="262" y2="165"/>
+    <line x1="455" y1="165" x2="497" y2="165"/>
+    <line x1="690" y1="165" x2="732" y2="165"/>
+    <line x1="925" y1="165" x2="967" y2="165"/>
+  </g>
+  <g font-family="monospace">
+    <polygon points="262,157 262,173 276,165" fill="#3a4452"/>
+    <polygon points="497,157 497,173 511,165" fill="#3a4452"/>
+    <polygon points="732,157 732,173 746,165" fill="#3a4452"/>
+    <polygon points="967,157 967,173 981,165" fill="#3a4452"/>
+  </g>
+  <rect x="500" y="300" width="425" height="150" rx="12" fill="#111419" stroke="#dfc078" stroke-width="2" stroke-dasharray="10 7"/>
+  <text x="530" y="350" font-family="monospace" font-size="23" fill="#dfc078">local AI · Qwen3 4B via Ollama</text>
+  <text x="530" y="384" font-family="monospace" font-size="20" fill="#9aa6b4">labels only, never numbers</text>
+  <text x="530" y="414" font-family="monospace" font-size="20" fill="#9aa6b4">keyword rules stay as fallback</text>
+  <line x1="712" y1="300" x2="712" y2="233" stroke="#dfc078" stroke-width="2" stroke-dasharray="8 6"/>
+  <polygon points="704,247 720,247 712,233" fill="#dfc078"/>
+  <text x="60" y="510" font-family="monospace" font-size="20" fill="#626e7d">green = deterministic parser · amber dashed = label-maker sidecar</text>
+</svg>

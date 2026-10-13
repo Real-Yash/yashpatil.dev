@@ -1,10 +1,150 @@
-<!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Yash Patil — Software Engineer (AI-first)</title>
-<meta name="robots" content="noindex, follow">
-<link rel="canonical" href="https://yashpatil.dev/">
-<meta http-equiv="refresh" content="0; url=https://yashpatil.dev/">
-</head><body>
-<p>This page has moved. <a href="https://yashpatil.dev/">Continue to yashpatil.dev →</a></p>
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blogs - Yash Patil</title>
+<meta name="description" content="Writing by Yash Patil. Notes on software engineering, AI, Linux infrastructure and building things properly.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://yashpatil.dev/blogs/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="yashpatil.dev">
+<meta property="og:title" content="Blogs - Yash Patil">
+<meta property="og:description" content="Writing by Yash Patil. Notes on software engineering, AI, Linux infrastructure and building things properly.">
+<meta property="og:url" content="https://yashpatil.dev/blogs/">
+<meta property="og:image" content="https://yashpatil.dev/avatar.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#0b0d10">
+<script>
+try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}
+</script>
+<style>
+:root{
+  --bg:#0b0d10; --surface:#111419;
+  --line:#1f2630; --line-soft:#181e27;
+  --text:#e8edf2; --muted:#9aa6b4; --faint:#626e7d;
+  --accent:#8fd694;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --max:1024px; --measure:68ch;
+  --hover:#161c24; --lede:#c3ccd6;
+  --topbar:rgba(11,13,16,.86);
+  --foot-bg:transparent;
+  color-scheme:dark;
+}
+[data-theme="light"]{
+  --bg:#f7f6f3; --surface:#ffffff;
+  --line:#e2dfd6; --line-soft:#ebe8e0;
+  --text:#16191d; --muted:#59636e; --faint:#8b94a0;
+  --accent:#18794e;
+  --hover:#eceff1; --lede:#3d454e;
+  --topbar:rgba(247,246,243,.88);
+  --foot-bg:#e9e6de;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+.site-head{position:sticky;top:0;z-index:50;background:var(--topbar);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{font-family:var(--mono);font-size:14px;color:var(--text);text-decoration:none}
+.brand b{font-weight:500}
+.brand .at{color:var(--faint)}
+.site-nav{display:flex;gap:2px}
+.site-nav a{font-family:var(--mono);font-size:13px;color:var(--muted);text-decoration:none;padding:7px 11px;border-radius:7px}
+.site-nav a:hover{color:var(--text);background:var(--hover)}
+.site-nav a.active{color:var(--accent)}
+#theme-btn{font-family:var(--mono);font-size:13px;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:7px 13px;cursor:pointer;white-space:nowrap}
+#theme-btn:hover{color:var(--text);border-color:var(--faint)}
+.list{max-width:var(--measure);margin:0 auto;padding:72px 0 40px}
+.kicker{font-family:var(--mono);font-size:13px;color:var(--accent);margin:0 0 14px}
+.list h1{font-size:clamp(2.2rem,6vw,3.2rem);line-height:1.06;letter-spacing:-.035em;margin:0 0 10px}
+.list .sub{color:var(--muted);margin:0 0 36px;font-size:1.02rem}
+.post-card{display:block;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:24px 26px;text-decoration:none;transition:border-color .18s,transform .18s}
+.post-card:hover{border-color:#334052;transform:translateY(-2px)}
+.post-card .meta{font-family:var(--mono);font-size:12.5px;color:var(--faint);margin:0 0 8px}
+.post-card h2{font-size:1.35rem;letter-spacing:-.02em;margin:0 0 8px;line-height:1.3}
+.post-card p{margin:0;color:var(--muted);font-size:.96rem;line-height:1.65}
+.post-card .more{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:14px 0 0}
+.post-card:hover .more{color:var(--accent)}
+footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:28px 0 44px;background:var(--foot-bg)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.foot .sig{font-family:var(--mono);font-size:12.5px;color:var(--faint)}
+.foot nav{display:flex;gap:4px;flex-wrap:wrap}
+.foot nav a{font-family:var(--mono);font-size:12.5px;color:var(--faint);text-decoration:none;padding:6px 10px;border-radius:6px}
+.foot nav a:hover{color:var(--accent)}
+@media(max-width:680px){.wrap{width:calc(100% - 40px)}.list{padding:48px 0 32px}}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/"><b>yashpatil</b><span class="at">.dev</span></a>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="/">home</a>
+      <a href="/blogs/" class="active" aria-current="page">blogs</a>
+      <a href="/#projects">projects</a>
+      <a href="/#contact">contact</a>
+    </nav>
+    <button id="theme-btn" type="button" aria-label="Toggle color theme">☀ light</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <main class="list">
+    <p class="kicker">yashpatil.dev / blogs</p>
+    <h1>Blogs</h1>
+    <p class="sub">Notes on software engineering, AI, Linux infrastructure and building things properly.</p>
+
+    <a class="post-card" href="/blogs/so-i-built-the-parser/">
+      <p class="meta"><time datetime="2026-10-13">oct 13, 2026</time> · post 002 · 5 min</p>
+      <h2>So I built the parser</h2>
+      <p>Statement2CSV: offline PDFs in, Money Manager CSV out. Rules and regex do the parsing, local AI only writes labels. Boring. Perfect.</p>
+      <p class="more">read post →</p>
+    </a>
+
+    <a class="post-card" href="/blogs/ai-slop-ruined-software-engineering/" style="margin-top:14px">
+      <p class="meta"><time datetime="2026-10-09">oct 9, 2026</time> · post 001 · 4 min</p>
+      <h2>AI slop ruined software engineering</h2>
+      <p>My phone wiped months of expense data. AI could not parse my bank statements. A boring 2010 parser could. That is when I got why the old guys were sad.</p>
+      <p class="more">read post →</p>
+    </a>
+  </main>
+</div>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot">
+      <span class="sig">© 2026 Yash Patil · yashpatil.dev</span>
+      <nav aria-label="Social">
+        <a href="https://github.com/Real-Yash" target="_blank" rel="noreferrer">github</a>
+        <a href="https://www.linkedin.com/in/yashbytes/" target="_blank" rel="noreferrer">linkedin</a>
+        <a href="https://x.com/yashbytes" target="_blank" rel="noreferrer">x</a>
+        <a href="/blogs/">blogs</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+const themeBtn = document.getElementById('theme-btn');
+const paintThemeBtn = () => { if (themeBtn) themeBtn.textContent = document.documentElement.dataset.theme === 'light' ? '☾ dark' : '☀ light'; };
+const setTheme = (t) => {
+  if (t === 'light') document.documentElement.dataset.theme = 'light';
+  else document.documentElement.removeAttribute('data-theme');
+  try { localStorage.setItem('theme', t); } catch (e) {}
+  paintThemeBtn();
+};
+paintThemeBtn();
+themeBtn?.addEventListener('click', () => setTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'));
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430">
+  <rect width="1000" height="430" fill="#0b0d10"/>
+  <g font-family="monospace" font-size="21" fill="#9aa6b4">
+    <text x="40" y="45">Needs</text>
+    <rect x="125" y="18" width="150" height="36" rx="7" fill="#1a2230" stroke="#2b3442" stroke-width="1"/>
+    <text x="140" y="43" font-size="20" fill="#9cc8e0">ollama serve</text>
+    <text x="285" y="45">running with the model pulled. Amber rows = low AI</text>
+    <text x="40" y="76">confidence, please review. Keyword labels stay as fallback.</text>
+  </g>
+  <g font-family="monospace">
+    <rect x="40" y="105" width="290" height="130" rx="14" fill="#111419" stroke="#2b3442" stroke-width="2"/>
+    <text x="70" y="150" font-size="22" fill="#9aa6b4">Transactions</text>
+    <text x="70" y="200" font-size="38" font-weight="bold" fill="#e8edf2">1381</text>
+    <rect x="355" y="105" width="290" height="130" rx="14" fill="#111419" stroke="#2b3442" stroke-width="2"/>
+    <text x="385" y="150" font-size="22" fill="#9aa6b4">Money in</text>
+    <text x="385" y="200" font-size="34" font-weight="bold" fill="#4ade80">₹10,09,709.67</text>
+    <rect x="670" y="105" width="290" height="130" rx="14" fill="#111419" stroke="#2b3442" stroke-width="2"/>
+    <text x="700" y="150" font-size="22" fill="#9aa6b4">Money out</text>
+    <text x="700" y="200" font-size="34" font-weight="bold" fill="#f87171">₹8,01,008.32</text>
+    <rect x="40" y="255" width="920" height="130" rx="14" fill="#111419" stroke="#2b3442" stroke-width="2"/>
+    <text x="70" y="300" font-size="22" fill="#9aa6b4">Period</text>
+    <text x="70" y="350" font-size="32" font-weight="bold" fill="#e8edf2">2026-04-01 → 2026-10-13</text>
+  </g>
+</svg>
