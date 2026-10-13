@@ -130,6 +130,7 @@ a{color:inherit}
 .stats-src{font-family:var(--mono);font-size:12px;color:var(--faint);margin:10px 2px 0}
 .stats-src a{color:var(--muted);text-decoration:none}
 .stats-src a:hover{color:var(--accent)}
+.stats.gh{grid-template-columns:repeat(4,1fr);margin-top:14px}
 /* ---------- terminal ---------- */
 .term{margin-top:56px;border:1px solid #232c3a;border-radius:12px;background:#0e1217;overflow:hidden}
 .term-bar{display:flex;align-items:center;gap:10px;padding:11px 16px;border-bottom:1px solid #181e27;font-family:var(--mono);font-size:12.5px;color:#626e7d}
@@ -188,6 +189,18 @@ section.block{padding:72px 0 8px;scroll-margin-top:72px}
 .stack{font-family:var(--mono);font-size:12px;color:var(--faint)}
 .proj-link{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none;white-space:nowrap}
 .proj-link:hover{color:var(--accent)}
+/* ---------- all repos ---------- */
+.more-head{font-size:.88rem;font-weight:650;margin:20px 0 8px;letter-spacing:-.01em}
+.repo-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.repo-list li{display:flex;flex-direction:column;gap:6px;padding:12px 14px;font-size:.82rem;border:1px solid var(--line);border-radius:10px;background:var(--surface);transition:border-color .18s,transform .18s}
+.repo-list li:hover{border-color:#334052;transform:translateY(-2px)}
+.repo-list a{color:var(--text);text-decoration:none;font-weight:600;font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.repo-list a:hover{color:var(--accent)}
+.repo-desc{color:var(--muted);font-size:.76rem;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1;min-width:0}
+.repo-meta{margin-top:auto;padding-top:2px;font-family:var(--mono);font-size:11px;color:var(--faint);white-space:nowrap}
+.more-foot{margin:12px 2px 0;font-family:var(--mono);font-size:12.5px}
+.more-foot a{color:var(--muted);text-decoration:none}
+.more-foot a:hover{color:var(--accent)}
 /* ---------- skills ---------- */
 .skill-rows{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
 .skill-row{display:grid;grid-template-columns:170px 1fr;gap:18px;padding:16px 24px;align-items:baseline}
@@ -229,6 +242,7 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
 .foot nav a:hover{color:var(--accent)}
 @media(max-width:820px){
   .proj-grid{grid-template-columns:1fr 1fr}
+  .repo-list{grid-template-columns:1fr 1fr}
   .contact-grid{grid-template-columns:1fr}
   .hero{padding:60px 0 48px}
 }
@@ -250,7 +264,7 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
   .stats::-webkit-scrollbar{display:none}
   .stats div{min-width:46%;scroll-snap-align:start}
   .stats dd{font-size:1.2rem}
-  .proj-grid{grid-template-columns:1fr}
+  .proj-grid,.repo-list{grid-template-columns:1fr}
   .sec-label .note{display:none}
   .identity{gap:14px}
   .avatar{width:68px;height:68px;border-radius:20px}
@@ -314,9 +328,16 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
     <dl class="stats">
       <div><dt>tokens burned</dt><dd>3.41B</dd></div>
       <div><dt>ai spend</dt><dd>$1,206</dd></div>
-      <div><dt>lines of code</dt><dd>46.4K</dd></div>
+      <div><dt>lines of code</dt><dd>318.0K</dd></div>
     </dl>
-    <p class="stats-src">tokens via <a href="https://tokenmaxxing.sh/real-yash" target="_blank" rel="noreferrer">tokenmaxxing ↗</a> · code across 17 owned repos via <a href="https://github.com/Real-Yash" target="_blank" rel="noreferrer">github ↗</a> · oct 2026</p>
+    <p class="stats-src">tokens via <a href="https://tokenmaxxing.sh/real-yash" target="_blank" rel="noreferrer">tokenmaxxing ↗</a> · code across 38 owned repos (incl. private) · oct 2026</p>
+    <dl class="stats gh">
+      <div><dt>repos</dt><dd>38</dd></div>
+      <div><dt>commits</dt><dd>1,779</dd></div>
+      <div><dt>pull requests</dt><dd>102</dd></div>
+      <div><dt>forks</dt><dd>0</dd></div>
+    </dl>
+    <p class="stats-src">via <a href="https://github.com/Real-Yash" target="_blank" rel="noreferrer">github.com/Real-Yash ↗</a> · oct 2026</p>
 
     <div class="term">
       <div class="term-bar"><span class="pulse" aria-hidden="true"></span><span>yash — zsh</span><span class="hint">help · ↑↓ history · ⇥ complete</span></div>
@@ -367,9 +388,9 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
     <div class="proj-grid">
       <article class="proj" data-domains="ai llm software">
         <div class="proj-top"><span class="idx">01</span><span class="tag-private">PRIVATE</span></div>
-        <h3>AI Bhai</h3>
+        <h3><a href="https://aibhai.app" target="_blank" rel="noreferrer">AI Bhai <span class="ext">↗</span></a></h3>
         <p>Mobile-first consumer AI assistant. Chat Mode (free conversational AI) + Work Mode (task-oriented agent that does tasks). Hindi / Marathi / English + voice + MCP plugin ecosystem.</p>
-        <div class="proj-foot"><span class="stack">Next.js 15 · Supabase · OpenRouter</span></div>
+        <div class="proj-foot"><span class="stack">Next.js 15 · Supabase · OpenRouter</span><a class="proj-link" href="https://aibhai.app" target="_blank" rel="noreferrer">aibhai.app ↗</a></div>
       </article>
       <article class="proj" data-domains="ai llm software devops">
         <div class="proj-top"><span class="idx">02</span></div>
@@ -409,11 +430,26 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
       </article>
       <article class="proj" data-domains="ai llm software">
         <div class="proj-top"><span class="idx">08</span></div>
-        <h3>SitChat</h3>
+        <h3><a href="https://sitchat.ai" target="_blank" rel="noreferrer">SitChat <span class="ext">↗</span></a></h3>
         <p>Chatbase-like platform: upload data → AI support bot → embed / API.</p>
-        <div class="proj-foot"><span class="stack">AI agents · Embeds · API</span></div>
+        <div class="proj-foot"><span class="stack">AI agents · Embeds · API</span><a class="proj-link" href="https://sitchat.ai" target="_blank" rel="noreferrer">sitchat.ai ↗</a></div>
       </article>
     </div>
+    <h3 class="more-head">More public repos</h3>
+    <ul class="repo-list">
+      <li><a href="https://github.com/Real-Yash/Real-Yash" target="_blank" rel="noreferrer">Real-Yash</a><span class="repo-desc">Config files for my GitHub profile.</span><span class="repo-meta">★ 3</span></li>
+      <li><a href="https://github.com/Real-Yash/DUCK" target="_blank" rel="noreferrer">DUCK</a><span class="repo-desc">prank website to troll friends</span><span class="repo-meta">HTML · ★ 1</span></li>
+      <li><a href="https://github.com/Real-Yash/HyperNotes" target="_blank" rel="noreferrer">HyperNotes</a><span class="repo-desc">todo list app from scratch with typescript</span><span class="repo-meta">TypeScript · ★ 1</span></li>
+      <li><a href="https://github.com/Real-Yash/dia-mcp" target="_blank" rel="noreferrer">dia-mcp</a><span class="repo-desc">UI/UX inspiration MCP server — design ideas from various platforms</span><span class="repo-meta">Python</span></li>
+      <li><a href="https://github.com/Real-Yash/dotfile" target="_blank" rel="noreferrer">dotfile</a><span class="repo-meta">CSS</span></li>
+      <li><a href="https://github.com/Real-Yash/hyper.io" target="_blank" rel="noreferrer">hyper.io</a><span class="repo-desc">Hyper.io game with friendship mechanics and social features</span><span class="repo-meta">JavaScript</span></li>
+      <li><a href="https://github.com/Real-Yash/chess" target="_blank" rel="noreferrer">chess</a><span class="repo-meta">JavaScript</span></li>
+      <li><a href="https://github.com/Real-Yash/urlshortner" target="_blank" rel="noreferrer">urlshortner</a><span class="repo-meta">TypeScript</span></li>
+      <li><a href="https://github.com/Real-Yash/moneytracker" target="_blank" rel="noreferrer">moneytracker</a><span class="repo-meta">HTML</span></li>
+      <li><a href="https://github.com/Real-Yash/rustxo" target="_blank" rel="noreferrer">rustxo</a><span class="repo-meta">Rust</span></li>
+      <li><a href="https://github.com/Real-Yash/yashpatil.dev" target="_blank" rel="noreferrer">yashpatil.dev</a><span class="repo-desc">This site — terminal-style portfolio + Cloudflare Worker</span><span class="repo-meta">HTML</span></li>
+    </ul>
+    <p class="more-foot"><a href="https://github.com/Real-Yash?tab=repositories" target="_blank" rel="noreferrer">all repositories on github ↗</a></p>
   </section>
 
   <section class="block" id="skills">
@@ -436,7 +472,7 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
       </div>
       <div class="edu-item">
         <div><div class="t">BS, Data Science — IIT Madras</div><div class="d">Online degree</div></div>
-        <div class="r">2023 – 2025</div>
+        <div class="r">2023 – 2025 (Dropped Out)</div>
       </div>
       <div class="edu-item">
         <div><div class="t">Certifications</div><div class="d">Deep Learning (Coursera) · IBM Full Stack Software Developer · Frontend Development using React</div></div>
@@ -448,7 +484,6 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
     <div class="sec-label"><span class="n">06</span><h2>Contact</h2><span class="note">email only</span></div>
     <div class="contact-grid">
       <div class="contact-copy">
-        <p>Recruiters: this site mirrors my resume — one consistent story. The fastest way to reach me is email.</p>
         <p><a class="email" href="mailto:yashpatil.cse@gmail.com">yashpatil.cse@gmail.com</a></p>
         <ul class="contact-ids">
           <li><span class="k">github</span><a href="https://github.com/Real-Yash" target="_blank" rel="noreferrer">Real-Yash ↗</a></li>
@@ -561,7 +596,7 @@ const CMDS = {
   education: () => { go('education'); return '→ #education'; },
   contact: () => { go('contact'); return '→ #contact — yashpatil.cse@gmail.com'; },
   socials: () => 'github.com/Real-Yash · linkedin.com/in/yashbytes · x.com/yashbytes',
-  stats: () => '3.41B tokens · $1,206 spend · 46.4K lines across 17 owned repos (oct 2026)',
+  stats: () => '3.41B tokens · $1,206 spend · 318.0K lines (38 repos) · 1,779 commits · 102 PRs · oct 2026',
   filter: (arg) => {
     const keys = ['ai', 'software', 'networking', 'hardware', 'devops', 'llm'];
     if (!arg || arg === 'all') { applyFilter(''); go('projects'); return '→ showing all projects'; }
