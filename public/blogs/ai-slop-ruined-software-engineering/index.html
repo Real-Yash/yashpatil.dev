@@ -86,9 +86,10 @@ a{color:inherit}
 .site-nav a{font-family:var(--mono);font-size:13px;color:var(--muted);text-decoration:none;padding:7px 11px;border-radius:7px}
 .site-nav a:hover{color:var(--text);background:var(--hover)}
 .site-nav a.active{color:var(--accent)}
+#menu-btn{display:none;font-family:var(--mono);font-size:13px;color:var(--text);background:none;border:1px solid var(--line);border-radius:8px;padding:7px 13px;cursor:pointer}
 #theme-btn{font-family:var(--mono);font-size:13px;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:7px 13px;cursor:pointer;white-space:nowrap}
 #theme-btn:hover{color:var(--text);border-color:var(--faint)}
-.post{max-width:var(--measure);margin:0 auto;padding:72px 0 40px}
+.post{max-width:var(--max);margin:0 auto;padding:72px 0 40px}
 .post-meta{font-family:var(--mono);font-size:13px;color:var(--faint);margin:0 0 16px}
 .post-meta .sep{margin:0 10px}
 .post-meta a{color:var(--muted);text-decoration:none}
@@ -109,7 +110,7 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
 .foot nav{display:flex;gap:4px;flex-wrap:wrap}
 .foot nav a{font-family:var(--mono);font-size:12.5px;color:var(--faint);text-decoration:none;padding:6px 10px;border-radius:6px}
 .foot nav a:hover{color:var(--accent)}
-@media(max-width:680px){.site-nav a.hide-m{display:none}.post{padding:48px 0 32px}.wrap{width:calc(100% - 40px)}}
+@media(max-width:680px){.site-nav{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--surface-2);border-bottom:1px solid var(--line);padding:10px 24px 16px}.site-nav.open{display:flex}#menu-btn{display:block}.brand{font-size:12.5px}#theme-btn,#menu-btn{padding:7px 10px;font-size:12px}.post{padding:48px 0 32px}.wrap{width:calc(100% - 40px)}}
 </style>
 </head>
 <body>
@@ -117,13 +118,14 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="/"><b>yashpatil</b><span class="at">.dev</span></a>
-    <nav class="site-nav" aria-label="Sections">
+    <nav class="site-nav" id="site-nav" aria-label="Sections">
       <a href="/">home</a>
+      <a href="/about/">about</a>
+      <a href="/projects/">projects</a>
       <a href="/blogs/" class="active" aria-current="page">blogs</a>
-      <a href="/#projects" class="hide-m">projects</a>
-      <a href="/#contact" class="hide-m">contact</a>
     </nav>
     <button id="theme-btn" type="button" aria-label="Toggle color theme">☀ light</button>
+    <button id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">menu</button>
   </div>
 </header>
 
@@ -164,7 +166,6 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
         <a href="https://github.com/Real-Yash" target="_blank" rel="noreferrer">github</a>
         <a href="https://www.linkedin.com/in/yashbytes/" target="_blank" rel="noreferrer">linkedin</a>
         <a href="https://x.com/yashbytes" target="_blank" rel="noreferrer">x</a>
-        <a href="/blogs/">blogs</a>
       </nav>
     </div>
   </div>
@@ -181,6 +182,14 @@ const setTheme = (t) => {
 };
 paintThemeBtn();
 themeBtn?.addEventListener('click', () => setTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'));
+// mobile menu
+const menuBtn = document.getElementById('menu-btn');
+const siteNav = document.getElementById('site-nav');
+menuBtn?.addEventListener('click', () => {
+  const open = siteNav.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(open));
+});
+siteNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => siteNav.classList.remove('open')));
 </script>
 </body>
 </html>

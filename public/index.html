@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yash Patil | Software Developer &amp; AI Engineer</title>
-<meta name="description" content="Yash Patil (yashbytes) is a Software Developer & AI Engineer and final-year B.Tech CSE student at Vishwakarma University, Pune. I build AI-powered products, LLM apps, RAG systems, backend systems, and Linux infrastructure. Currently at HG Labs.">
+<title>Yash Patil | Software Developer &amp; Applied AI Engineer</title>
+<meta name="description" content="Yash Patil (yashbytes) is a Software Developer & Applied AI Engineer and final-year B.Tech CSE student at Vishwakarma University, Pune. I build AI-powered products, LLM apps, RAG systems, backend systems, and Linux infrastructure. Currently at HG Labs.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://yashpatil.dev/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="yashpatil.dev">
-<meta property="og:title" content="Yash Patil | Software Developer &amp; AI Engineer">
-<meta property="og:description" content="Software Developer & AI Engineer building AI-powered products, LLM apps, RAG systems, backend systems, and Linux infrastructure. HG Labs. B.Tech CSE, Vishwakarma University.">
+<meta property="og:title" content="Yash Patil | Software Developer &amp; Applied AI Engineer">
+<meta property="og:description" content="Software Developer & Applied AI Engineer building AI-powered products, LLM apps, RAG systems, backend systems, and Linux infrastructure. HG Labs. B.Tech CSE, Vishwakarma University.">
 <meta property="og:url" content="https://yashpatil.dev/">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Real-Yash/yashpatil.dev@main/public/social/home.png">
 <meta property="og:image:width" content="1200">
@@ -21,8 +21,8 @@
 <meta name="twitter:creator" content="@yashbytes">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Real-Yash/yashpatil.dev@main/public/social/home.png">
 <meta name="twitter:image:alt" content="Yash Patil, Software Developer and AI Engineer, yashpatil.dev">
-<meta name="twitter:title" content="Yash Patil | Software Developer &amp; AI Engineer">
-<meta name="twitter:description" content="Software Developer & AI Engineer. AI products, LLM apps, RAG, backend systems, Linux infra. HG Labs, VU CSE '27.">
+<meta name="twitter:title" content="Yash Patil | Software Developer &amp; Applied AI Engineer">
+<meta name="twitter:description" content="Software Developer & Applied AI Engineer. AI products, LLM apps, RAG, backend systems, Linux infra. HG Labs, VU CSE '27.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -38,11 +38,11 @@ try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: lig
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Yash Patil",
-  "alternateName": "yashbytes",
+  "alternateName": ["yashbytes", "yashpatil"],
   "url": "https://yashpatil.dev/",
-  "jobTitle": "Software Developer and AI Engineer at HG Labs Private Limited",
-  "description": "Yash Patil (yashbytes) is a Software Developer and AI Engineer, and a final-year B.Tech CSE student at Vishwakarma University, Pune. Builds AI-powered products, LLM apps, RAG systems, backend systems, and Linux infrastructure.",
-  "knowsAbout": ["Software Development", "AI Engineering", "Large Language Models", "Retrieval-Augmented Generation", "AI Agents", "Backend Systems", "Linux Infrastructure", "DevOps"],
+  "jobTitle": "Software Developer and Applied AI Engineer at HG Labs Private Limited",
+  "description": "Yash Patil (yashbytes) is a Software Developer and Applied AI Engineer, and a final-year B.Tech CSE student at Vishwakarma University, Pune. Builds AI-powered products, LLM apps, RAG systems, backend systems, and Linux infrastructure.",
+  "knowsAbout": ["Software Development", "Applied AI Engineering", "AI Engineering", "Large Language Models", "LLM Engineering", "Retrieval-Augmented Generation", "RAG", "AI Agents", "Backend Systems", "Linux Infrastructure", "DevOps"],
   "alumniOf": [
     { "@type": "CollegeOrUniversity", "name": "Vishwakarma University, Pune" },
     { "@type": "CollegeOrUniversity", "name": "Indian Institute of Technology Madras" }
@@ -102,7 +102,6 @@ a{color:inherit}
 .site-nav a:hover{color:var(--text);background:var(--hover)}
 .site-nav a.active{color:var(--accent)}
 #menu-btn{display:none;font-family:var(--mono);font-size:13px;color:var(--text);background:none;border:1px solid var(--line);border-radius:8px;padding:7px 13px;cursor:pointer}
-.head-actions{display:flex;gap:10px;align-items:center}
 #theme-btn{font-family:var(--mono);font-size:13px;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:7px 13px;cursor:pointer;white-space:nowrap}
 #theme-btn:hover{color:var(--text);border-color:var(--faint)}
 /* ---------- hero ---------- */
@@ -149,9 +148,15 @@ a{color:inherit}
 #term-out p{margin:5px 0;color:#9aa6b4}
 #term-out .ps{color:#8fd694}
 #term-out .bright{color:#e8edf2}
+#term-out .dim{color:#626e7d}
+#term-out .amber{color:#dfc078}
+#term-out .err{color:#f0889a}
+.term:focus-within{border-color:#334052}
 .term-form{display:flex;align-items:center;gap:10px;padding:13px 18px;border-top:1px solid #181e27;font-family:var(--mono);font-size:13.5px}
 .term-form .ps{color:#8fd694;white-space:nowrap}
-.term-form input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#e8edf2;font-family:var(--mono);font-size:13.5px;caret-color:#8fd694}
+.term-inputwrap{position:relative;flex:1;min-width:0;display:flex}
+.term-inputwrap input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#e8edf2;font-family:var(--mono);font-size:13.5px;caret-color:#8fd694}
+#term-ghost{position:absolute;top:50%;transform:translateY(-50%);color:#3d4756;white-space:pre;overflow:hidden;pointer-events:none;font-family:var(--mono);font-size:13.5px;display:none;max-width:100%}
 /* ---------- sections ---------- */
 section.block{padding:72px 0 8px;scroll-margin-top:72px}
 .sec-label{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line-soft);padding-bottom:14px;margin-bottom:28px}
@@ -210,6 +215,10 @@ section.block{padding:72px 0 8px;scroll-margin-top:72px}
 .more-foot{margin:12px 2px 0;font-family:var(--mono);font-size:12.5px}
 .more-foot a{color:var(--muted);text-decoration:none}
 .more-foot a:hover{color:var(--accent)}
+.show-more-wrap{margin-top:20px;display:flex;justify-content:center}
+.show-more-btn{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;text-decoration:none;border-radius:9px;padding:12px 28px;background:transparent;color:var(--text);border:1px solid #2b3442;transition:transform .15s,background .15s,border-color .15s}
+.show-more-btn:hover{border-color:var(--faint);background:var(--hover)}
+.show-more-btn:active{transform:translateY(1px)}
 /* ---------- skills ---------- */
 .skill-rows{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
 .skill-row{display:grid;grid-template-columns:170px 1fr;gap:18px;padding:16px 24px;align-items:baseline}
@@ -260,13 +269,12 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
   .site-nav.open{display:flex}
   #menu-btn{display:block}
   .brand{font-size:12.5px}
-  .head-actions{gap:8px}
   #theme-btn,#menu-btn{padding:7px 10px;font-size:12px}
   .hero h1{font-size:2.35rem}
   .hero .role{font-size:1.08rem}
   .actions .btn{flex:1 1 150px;justify-content:center}
   .term-bar .hint{display:none}
-  .term-form input{font-size:16px}
+  .term-inputwrap input,#term-ghost{font-size:16px}
   .field input,.field textarea{font-size:16px}
   .skill-row{grid-template-columns:1fr;gap:6px}
   .stats{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
@@ -296,30 +304,25 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="#top"><b>yashpatil</b><span class="at">.dev</span></a>
-    <span class="head-actions">
-      <button id="theme-btn" type="button" aria-label="Toggle color theme">☀ light</button>
-      <button id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">menu</button>
-    </span>
     <nav class="site-nav" id="site-nav" aria-label="Sections">
-      <a href="#experience">experience</a>
-      <a href="#interests">interests</a>
-      <a href="#projects">projects</a>
+      <a href="#top">home</a>
+      <a href="/about/">about</a>
+      <a href="/projects/">projects</a>
       <a href="/blogs/">blogs</a>
-      <a href="#skills">skills</a>
-      <a href="#education">education</a>
-      <a href="#contact">contact</a>
     </nav>
+    <button id="theme-btn" type="button" aria-label="Toggle color theme">☀ light</button>
+    <button id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">menu</button>
   </div>
 </header>
 
 <div class="wrap" id="top">
   <section class="hero">
-    <p class="kicker">yash@dev <span class="sep">—</span> pune, in</p>
+    <p class="kicker">yash@dev <span class="sep">-</span> pune, in</p>
     <div class="identity">
       <img class="avatar" src="https://cdn.jsdelivr.net/gh/Real-Yash/yashpatil.dev@main/public/avatar.jpg" alt="Illustrated avatar of Yash Patil" width="460" height="460" fetchpriority="high">
       <div>
         <h1>Yash Patil</h1>
-        <p class="role">Software Developer &amp; AI Engineer</p>
+        <p class="role">Software Developer &amp; Applied AI Engineer</p>
       </div>
     </div>
     <p class="lede">I build AI-powered products, LLM apps, RAG systems, backend systems, and Linux infrastructure. Final-year B.Tech CSE at Vishwakarma University, Pune, currently shipping production systems at HG Labs.</p>
@@ -337,28 +340,28 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
     </div>
 
     <dl class="stats">
-      <div><dt>tokens burned</dt><dd>3.41B</dd></div>
-      <div><dt>ai spend</dt><dd>$1,206</dd></div>
-      <div><dt>lines of code</dt><dd>318.0K</dd></div>
+      <div><dt>tokens burned</dt><dd id="stat-tokens">3.41B</dd></div>
+      <div><dt>ai spend</dt><dd id="stat-spend">$1,206</dd></div>
+      <div><dt>lines of code</dt><dd id="stat-loc">318.0K</dd></div>
     </dl>
-    <p class="stats-src">tokens via <a href="https://tokenmaxxing.sh/real-yash" target="_blank" rel="noreferrer">tokenmaxxing ↗</a> · code across 38 owned repos (incl. private) · oct 2026</p>
+    <p class="stats-src">tokens via <a href="https://tokenmaxxing.sh/real-yash" target="_blank" rel="noreferrer">tokenmaxxing ↗</a> · code across <span id="stat-repos-inline">38</span> owned repos (incl. private) · <span id="stats-month-a">oct 2026</span></p>
     <dl class="stats gh">
-      <div><dt>repos</dt><dd>38</dd></div>
-      <div><dt>commits</dt><dd>1,779</dd></div>
-      <div><dt>pull requests</dt><dd>102</dd></div>
-      <div><dt>forks</dt><dd>0</dd></div>
+      <div><dt>repos</dt><dd id="stat-repos">38</dd></div>
+      <div><dt>commits</dt><dd id="stat-commits">1,779</dd></div>
+      <div><dt>pull requests</dt><dd id="stat-prs">102</dd></div>
+      <div><dt>forks</dt><dd id="stat-forks">0</dd></div>
     </dl>
-    <p class="stats-src">via <a href="https://github.com/Real-Yash" target="_blank" rel="noreferrer">github.com/Real-Yash ↗</a> · oct 2026</p>
+    <p class="stats-src">via <a href="https://github.com/Real-Yash" target="_blank" rel="noreferrer">github.com/Real-Yash ↗</a> · <span id="stats-month-b">oct 2026</span></p>
 
     <div class="term">
-      <div class="term-bar"><span class="pulse" aria-hidden="true"></span><span>yash — zsh</span><span class="hint">help · ↑↓ history · ⇥ complete</span></div>
+      <div class="term-bar"><span class="pulse" aria-hidden="true"></span><span>yash - zsh</span><span class="hint">help · ↑↓ history · → accept · ⇥ complete</span></div>
       <div id="term-out" role="log" aria-live="polite">
         <p><span class="ps">➜</span> <span class="bright">~</span> <span>welcome. this page is navigable from here.</span></p>
       </div>
       <form class="term-form" id="term-form" autocomplete="off">
         <span class="ps" aria-hidden="true">➜ ~</span>
         <label for="term-in" class="hp">Terminal command</label>
-        <input id="term-in" type="text" spellcheck="false" autocapitalize="none" autocomplete="off" placeholder="help" aria-label="Terminal command">
+        <span class="term-inputwrap"><input id="term-in" type="text" spellcheck="false" autocapitalize="none" autocomplete="off" placeholder="help" aria-label="Terminal command"><span id="term-ghost" aria-hidden="true"></span></span>
       </form>
     </div>
   </section>
@@ -368,7 +371,7 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
     <div class="job">
       <div class="job-top">
         <div>
-          <h3>Software Engineer — HG Labs Private Limited</h3>
+          <h3>Software Engineer - HG Labs Private Limited</h3>
           <div class="co">Remote · founding team</div>
         </div>
         <time>Jun 2026 – Present</time>
@@ -394,73 +397,37 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
   </section>
 
   <section class="block" id="projects">
-    <div class="sec-label"><span class="n">03</span><h2>Projects</h2><span class="note">selected work</span></div>
-    <div class="proj-toolbar"><p id="filter-status">8 projects</p><button type="button" id="filter-clear" hidden>clear ×</button></div>
+    <div class="sec-label"><span class="n">03</span><h2>Projects</h2><span class="note">featured work</span></div>
+    <div class="proj-toolbar"><p id="filter-status">4 projects</p><button type="button" id="filter-clear" hidden>clear ×</button></div>
     <div class="proj-grid">
-      <article class="proj" data-domains="ai llm software">
-        <div class="proj-top"><span class="idx">01</span><span class="tag-private">PRIVATE</span></div>
-        <h3><a href="https://aibhai.app" target="_blank" rel="noreferrer">AI Bhai <span class="ext">↗</span></a></h3>
-        <p>Mobile-first consumer AI assistant. Chat Mode (free conversational AI) + Work Mode (task-oriented agent that does tasks). Hindi / Marathi / English + voice + MCP plugin ecosystem.</p>
-        <div class="proj-foot"><span class="stack">Next.js 15 · Supabase · OpenRouter</span><a class="proj-link" href="https://aibhai.app" target="_blank" rel="noreferrer">aibhai.app ↗</a></div>
-      </article>
       <article class="proj" data-domains="ai llm software devops">
-        <div class="proj-top"><span class="idx">02</span></div>
+        <div class="proj-top"><span class="idx">01</span></div>
         <h3><a href="https://github.com/Real-Yash/enterprise-rag" target="_blank" rel="noreferrer">AtlasRAG <span class="ext">↗</span></a></h3>
         <p>Local-first enterprise RAG over PDF / TXT / Markdown with grounded answers and source citations.</p>
         <div class="proj-foot"><span class="stack">FastAPI · Qdrant · MinIO · Docker Compose</span><a class="proj-link" href="https://github.com/Real-Yash/enterprise-rag" target="_blank" rel="noreferrer">repo ↗</a></div>
       </article>
       <article class="proj" data-domains="ai llm software">
-        <div class="proj-top"><span class="idx">03</span></div>
+        <div class="proj-top"><span class="idx">02</span></div>
         <h3><a href="https://github.com/Real-Yash/chatapi" target="_blank" rel="noreferrer">ChatAPI <span class="ext">↗</span></a></h3>
-        <p>Document-grounded AI agents for local businesses — embeddable chat widget, JWT auth, dashboards.</p>
+        <p>Document-grounded AI agents for local businesses - embeddable chat widget, JWT auth, dashboards.</p>
         <div class="proj-foot"><span class="stack">FastAPI · Next.js</span><a class="proj-link" href="https://github.com/Real-Yash/chatapi" target="_blank" rel="noreferrer">repo ↗</a></div>
       </article>
       <article class="proj" data-domains="ai software">
-        <div class="proj-top"><span class="idx">04</span></div>
+        <div class="proj-top"><span class="idx">03</span></div>
         <h3><a href="https://github.com/Real-Yash/DesignMCP" target="_blank" rel="noreferrer">DesignMCP <span class="ext">↗</span></a></h3>
-        <p>MCP server giving AI coding agents UI inspiration — query parsing, TTL cache, stdio transport, automated tests.</p>
+        <p>MCP server giving AI coding agents UI inspiration - query parsing, TTL cache, stdio transport, automated tests.</p>
         <div class="proj-foot"><span class="stack">Python · MCP</span><a class="proj-link" href="https://github.com/Real-Yash/DesignMCP" target="_blank" rel="noreferrer">repo ↗</a></div>
       </article>
       <article class="proj" data-domains="ai llm">
-        <div class="proj-top"><span class="idx">05</span></div>
+        <div class="proj-top"><span class="idx">04</span></div>
         <h3><a href="https://huggingface.co/yashbytes/T5-base-grammer-correction" target="_blank" rel="noreferrer">Distributed T5 fine-tuning <span class="ext">↗</span></a></h3>
         <p>Built a compute cluster from university lab computers; fine-tuned T5-base for grammar correction on JFLEG.</p>
         <div class="proj-foot"><span class="stack">PyTorch · Hugging Face · JFLEG</span><a class="proj-link" href="https://huggingface.co/yashbytes/T5-base-grammer-correction" target="_blank" rel="noreferrer">model ↗</a></div>
       </article>
-      <article class="proj" data-domains="software hardware">
-        <div class="proj-top"><span class="idx">06</span></div>
-        <h3><a href="https://github.com/Real-Yash/MYcShell" target="_blank" rel="noreferrer">MYcShell <span class="ext">↗</span></a></h3>
-        <p>Custom C shell for Unix + Windows. Systems programming, start to finish.</p>
-        <div class="proj-foot"><span class="stack">C · Systems</span><a class="proj-link" href="https://github.com/Real-Yash/MYcShell" target="_blank" rel="noreferrer">repo ↗</a></div>
-      </article>
-      <article class="proj" data-domains="networking devops">
-        <div class="proj-top"><span class="idx">07</span></div>
-        <h3><a href="https://github.com/Real-Yash/my-own-internet" target="_blank" rel="noreferrer">my-own-internet <span class="ext">↗</span></a></h3>
-        <p>Alt-root DNS infrastructure with custom TLDs. Real networking, not a toy.</p>
-        <div class="proj-foot"><span class="stack">DNS · Networking</span><a class="proj-link" href="https://github.com/Real-Yash/my-own-internet" target="_blank" rel="noreferrer">repo ↗</a></div>
-      </article>
-      <article class="proj" data-domains="ai llm software">
-        <div class="proj-top"><span class="idx">08</span></div>
-        <h3><a href="https://sitchat.ai" target="_blank" rel="noreferrer">SitChat <span class="ext">↗</span></a></h3>
-        <p>Chatbase-like platform: upload data → AI support bot → embed / API.</p>
-        <div class="proj-foot"><span class="stack">AI agents · Embeds · API</span><a class="proj-link" href="https://sitchat.ai" target="_blank" rel="noreferrer">sitchat.ai ↗</a></div>
-      </article>
     </div>
-    <h3 class="more-head">More public repos</h3>
-    <ul class="repo-list">
-      <li><a href="https://github.com/Real-Yash/Real-Yash" target="_blank" rel="noreferrer">Real-Yash</a><span class="repo-desc">Config files for my GitHub profile.</span><span class="repo-meta">★ 3</span></li>
-      <li><a href="https://github.com/Real-Yash/DUCK" target="_blank" rel="noreferrer">DUCK</a><span class="repo-desc">prank website to troll friends</span><span class="repo-meta">HTML · ★ 1</span></li>
-      <li><a href="https://github.com/Real-Yash/HyperNotes" target="_blank" rel="noreferrer">HyperNotes</a><span class="repo-desc">todo list app from scratch with typescript</span><span class="repo-meta">TypeScript · ★ 1</span></li>
-      <li><a href="https://github.com/Real-Yash/dia-mcp" target="_blank" rel="noreferrer">dia-mcp</a><span class="repo-desc">UI/UX inspiration MCP server — design ideas from various platforms</span><span class="repo-meta">Python</span></li>
-      <li><a href="https://github.com/Real-Yash/dotfile" target="_blank" rel="noreferrer">dotfile</a><span class="repo-meta">CSS</span></li>
-      <li><a href="https://github.com/Real-Yash/hyper.io" target="_blank" rel="noreferrer">hyper.io</a><span class="repo-desc">Hyper.io game with friendship mechanics and social features</span><span class="repo-meta">JavaScript</span></li>
-      <li><a href="https://github.com/Real-Yash/chess" target="_blank" rel="noreferrer">chess</a><span class="repo-meta">JavaScript</span></li>
-      <li><a href="https://github.com/Real-Yash/urlshortner" target="_blank" rel="noreferrer">urlshortner</a><span class="repo-meta">TypeScript</span></li>
-      <li><a href="https://github.com/Real-Yash/moneytracker" target="_blank" rel="noreferrer">moneytracker</a><span class="repo-meta">HTML</span></li>
-      <li><a href="https://github.com/Real-Yash/rustxo" target="_blank" rel="noreferrer">rustxo</a><span class="repo-meta">Rust</span></li>
-      <li><a href="https://github.com/Real-Yash/yashpatil.dev" target="_blank" rel="noreferrer">yashpatil.dev</a><span class="repo-desc">This site — terminal-style portfolio + Cloudflare Worker</span><span class="repo-meta">HTML</span></li>
-    </ul>
-    <p class="more-foot"><a href="https://github.com/Real-Yash?tab=repositories" target="_blank" rel="noreferrer">all repositories on github ↗</a></p>
+    <div class="show-more-wrap">
+      <a class="show-more-btn" href="/projects/">Show more →</a>
+    </div>
   </section>
 
   <section class="block" id="skills">
@@ -478,12 +445,12 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
     <div class="sec-label"><span class="n">05</span><h2>Education</h2></div>
     <div class="edu">
       <div class="edu-item">
-        <div><div class="t">B.Tech, Computer Science — Vishwakarma University, Pune</div></div>
+        <div><div class="t">B.Tech, Computer Science - Vishwakarma University, Pune</div><div class="d">CGPA 7.77/10</div></div>
         <div class="r">2023 – 2027</div>
       </div>
       <div class="edu-item">
-        <div><div class="t">BS, Data Science — IIT Madras</div><div class="d">Online degree</div></div>
-        <div class="r">2023 – 2025 (Dropped Out)</div>
+        <div><div class="t">BS, Data Science (coursework) - IIT Madras</div><div class="d">Online, discontinued 2025</div></div>
+        <div class="r">2023 – 2025</div>
       </div>
       <div class="edu-item">
         <div><div class="t">Certifications</div><div class="d">Deep Learning (Coursera) · IBM Full Stack Software Developer · Frontend Development using React</div></div>
@@ -530,15 +497,13 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
         <a href="https://www.linkedin.com/in/yashbytes/" target="_blank" rel="me noopener noreferrer">linkedin</a>
         <a href="https://x.com/yashbytes" target="_blank" rel="me noopener noreferrer">x</a>
         <a href="https://huggingface.co/yashbytes" target="_blank" rel="me noopener noreferrer">hugging face</a>
-        <a href="/about/">about</a>
-        <a href="/blogs/">blogs</a>
       </nav>
     </div>
   </div>
 </footer>
 
 <script>
-// age from dob (May 25, 2005) — auto-updates every birthday
+// age from dob (May 25, 2005) - auto-updates every birthday
 (() => {
   const dob = new Date(2005, 4, 25);
   const now = new Date();
@@ -580,17 +545,20 @@ if ('IntersectionObserver' in window) {
   secs.forEach(s => s && io.observe(s));
 }
 
-// terminal: static welcome + command navigation (no fake typing)
+// terminal: yashshell - history, ghost suggestions, live data, easter eggs
 const form = document.getElementById('term-form');
 const input = document.getElementById('term-in');
 const out = document.getElementById('term-out');
-const esc = (s) => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const ghost = document.getElementById('term-ghost');
+const esc = (s) => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-const say = (html) => {
+const say = (html, cls = '') => {
   const p = document.createElement('p');
+  if (cls) p.className = cls;
   p.innerHTML = html;
   out.appendChild(p);
   out.scrollTop = out.scrollHeight;
+  return p;
 };
 const LINKS = {
   github: 'https://github.com/Real-Yash',
@@ -599,19 +567,77 @@ const LINKS = {
   email: 'mailto:yashpatil.cse@gmail.com',
   tokenmaxxing: 'https://tokenmaxxing.sh/real-yash',
   blogs: '/blogs/',
+  about: '/about/',
+  projects: '/projects/',
+};
+let reposCache = null;
+const getRepos = async () => {
+  if (reposCache && Date.now() - reposCache.at < 3600e3) return reposCache.data;
+  const res = await fetch('https://api.github.com/users/Real-Yash/repos?per_page=100&type=owner', { headers: { Accept: 'application/vnd.github+json' } });
+  if (!res.ok) throw new Error('rate-limited');
+  const all = await res.json();
+  const own = all.filter(r => !r.fork).sort((a, b) => (b.stargazers_count || 0) - (a.stargazers_count || 0));
+  reposCache = { at: Date.now(), data: own };
+  return own;
 };
 const CMDS = {
-  help: () => 'nav: experience · interests · projects · skills · education · contact — info: whoami · stats · socials · ls — filter <domain|all> · open <site> · clear',
-  whoami: () => 'Yash Patil, Software Developer and AI Engineer. B.Tech CSE, Vishwakarma University (2023-2027).',
+  help: () => '<span class="amber">nav</span> - experience · interests · projects · skills · education · contact · blogs · about<br><span class="amber">info</span> - whoami · age · date · stats · repos · socials · email<br><span class="amber">find</span> - search &lt;kw&gt; · filter &lt;domain|all&gt; · open &lt;site|n&gt;<br><span class="amber">misc</span> - banner · theme [light|dark] · clear<br><span class="dim">keys ↑↓ history · → accept suggestion · ⇥ complete · aliases h · cls · gh</span>',
+  banner: () => '<span class="bright">yash patil</span> - software developer &amp; applied ai engineer<br>pune, in · <span class="amber">arch + hyprland</span> · neovim · hg labs<br><span class="dim">stats → numbers · repos → code · search &lt;kw&gt; → projects</span>',
+  whoami: () => 'Yash Patil, Software Developer and Applied AI Engineer. B.Tech CSE, Vishwakarma University (2023-2027).',
+  age: () => {
+    const dob = new Date(2005, 4, 25), now = new Date();
+    let a = now.getFullYear() - dob.getFullYear();
+    const m = now.getMonth() - dob.getMonth();
+    if (m < 0 || (m === 0 && now.getDate() < dob.getDate())) a--;
+    return `${a} years old (born May 25, 2005).`;
+  },
+  date: () => new Date().toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' }),
   ls: () => 'experience  interests  projects  skills  education  contact',
   experience: () => { go('experience'); return '→ #experience'; },
   interests: () => { go('interests'); return '→ #interests'; },
-  projects: () => { go('projects'); return '→ #projects'; },
+  projects: () => { go('projects'); return '→ #projects (featured) · all at /projects/'; },
   skills: () => { go('skills'); return '→ #skills'; },
   education: () => { go('education'); return '→ #education'; },
-  contact: () => { go('contact'); return '→ #contact — yashpatil.cse@gmail.com'; },
+  contact: () => { go('contact'); return '→ #contact - yashpatil.cse@gmail.com'; },
+  blogs: () => { location.href = '/blogs/'; return '→ going to blogs …'; },
+  about: () => { location.href = '/about/'; return '→ going to about …'; },
   socials: () => 'github.com/Real-Yash · linkedin.com/in/yashbytes · x.com/yashbytes',
-  stats: () => '3.41B tokens · $1,206 spend · 318.0K lines (38 repos) · 1,779 commits · 102 PRs · oct 2026',
+  email: async () => {
+    const addr = 'yashpatil.cse@gmail.com';
+    try { await navigator.clipboard.writeText(addr); return `→ ${esc(addr)} copied to clipboard.`; }
+    catch { return esc(addr); }
+  },
+  theme: (arg) => {
+    const cur = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+    if (arg === 'light' || arg === 'dark') setTheme(arg);
+    else setTheme(cur === 'light' ? 'dark' : 'light');
+    return `→ theme: ${document.documentElement.dataset.theme === 'light' ? 'light' : 'dark'}`;
+  },
+  stats: () => {
+    const s = window.__siteStats;
+    if (!s) return '3.41B tokens · $1,206 spend · 318.0K lines (38 repos) · 1,779 commits · 102 PRs · oct 2026';
+    return `${s.tokens} tokens · ${s.spend} spend · ${s.loc} lines (${s.repos} repos) · ${Number(s.commits).toLocaleString('en-US')} commits · ${Number(s.prs).toLocaleString('en-US')} PRs · ${s.month}`;
+  },
+  repos: async () => {
+    try {
+      const own = await getRepos();
+      const top = own.slice(0, 8).map(r => `${esc(r.name)} <span class="dim">★${r.stargazers_count} · ${esc(r.language || 'misc')}</span>`).join('<br>');
+      return `top repos by stars:<br>${top}<br><span class="dim">${own.length} public owned repos · full archive at /projects/ ↓</span>`;
+    } catch {
+      return '<span class="err">github api is rate-limited right now - featured grid above + full archive at /projects/ is up to date.</span>';
+    }
+  },
+  search: (arg) => {
+    if (!arg) return 'usage: search &lt;keyword&gt; - e.g. search rag';
+    const q = arg.toLowerCase();
+    const cards = [...document.querySelectorAll('.proj')];
+    const hits = cards.filter(c => c.innerText.toLowerCase().includes(q));
+    if (!hits.length) return `no featured match for “${esc(arg)}”. try: ai · llm · rag · mcp · full archive at /projects/`;
+    window.__searchHits = hits.map(c => c.querySelector('h3 a')?.href || null);
+    hits[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return hits.map((c, i) => `${i + 1}. ${esc(c.querySelector('h3')?.innerText || 'project')}`).join('<br>') +
+      `<br><span class="dim">${hits.length} featured match${hits.length > 1 ? 'es' : ''} · open &lt;n&gt; to visit · more at /projects/</span>`;
+  },
   filter: (arg) => {
     const keys = ['ai', 'software', 'networking', 'hardware', 'devops', 'llm'];
     if (!arg || arg === 'all') { applyFilter(''); go('projects'); return '→ showing all projects'; }
@@ -619,50 +645,111 @@ const CMDS = {
     applyFilter(arg); go('projects'); return `→ filtering projects: ${arg}`;
   },
   open: (arg) => {
+    const n = parseInt(arg, 10);
+    if (n && window.__searchHits?.[n - 1]) { window.open(window.__searchHits[n - 1], '_blank', 'noopener'); return `→ opening match #${n} …`; }
     const url = LINKS[arg];
-    if (!url) return `usage: open ${Object.keys(LINKS).join(' | ')}`;
+    if (!url) return `usage: open ${Object.keys(LINKS).join(' | ')} | &lt;n&gt;`;
+    if (url.startsWith('/')) { location.href = url; return `→ going to ${arg} …`; }
     window.open(url, '_blank', 'noopener');
     return `→ opening ${arg} …`;
   },
+  gh: () => CMDS.open('github'),
+  sudo: () => 'nice try. you already have root access to this page - no password needed.',
+  vim: () => 'you opened vim. there is no :q here. (kidding - this terminal is fake, your editor is safe.)',
+  nvim: () => CMDS.vim(),
+  emacs: () => 'emacs? on an arch + hyprland setup? bold. neovim is right there.',
+  exit: () => 'there is no escape - this tab is home now. try “clear” for a fresh start.',
+  quit: () => CMDS.exit(),
+  logout: () => CMDS.exit(),
+  rm: () => 'refusing to rm anything. your curiosity is safe here.',
+  hello: () => 'hey. type “help” to see what i can do.',
+  hi: () => CMDS.hello(),
+  hey: () => CMDS.hello(),
+  coffee: () => 'brewing… just kidding. go touch grass after you hire me.',
 };
+const ALIAS = { h: 'help', '?': 'help', cls: 'clear' };
 const NAMES = Object.keys(CMDS);
-const hist = [];
+let hist = [];
+try { hist = JSON.parse(localStorage.getItem('yash-term-hist') || '[]'); } catch { hist = []; }
+const saveHist = () => { try { localStorage.setItem('yash-term-hist', JSON.stringify(hist.slice(-50))); } catch { /* private mode */ } };
 let hIdx = -1;
+// fish-style ghost suggestion from history
+const meas = document.createElement('canvas').getContext('2d');
+const paintGhost = () => {
+  if (!ghost || !input) return;
+  const v = input.value;
+  const hit = v ? [...hist].reverse().find(h => h.startsWith(v) && h !== v) : null;
+  if (!hit) { ghost.style.display = 'none'; return; }
+  const cs = getComputedStyle(input);
+  meas.font = `${cs.fontSize} ${cs.fontFamily}`;
+  ghost.style.display = 'block';
+  ghost.style.left = `${meas.measureText(v).width}px`;
+  ghost.textContent = hit.slice(v.length);
+};
+input?.addEventListener('input', paintGhost);
 input?.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowUp') {
     e.preventDefault();
     if (!hist.length) return;
     hIdx = hIdx < 0 ? hist.length - 1 : Math.max(0, hIdx - 1);
     input.value = hist[hIdx];
+    paintGhost();
   } else if (e.key === 'ArrowDown') {
     e.preventDefault();
     if (hIdx < 0) return;
     hIdx++;
     input.value = hIdx >= hist.length ? (hIdx = -1, '') : hist[hIdx];
+    paintGhost();
+  } else if (e.key === 'ArrowRight' && ghost?.style.display === 'block' && ghost.textContent) {
+    e.preventDefault();
+    input.value += ghost.textContent;
+    paintGhost();
   } else if (e.key === 'Tab') {
     e.preventDefault();
+    if (ghost?.style.display === 'block' && ghost.textContent) { input.value += ghost.textContent; paintGhost(); return; }
     const parts = input.value.split(/\s+/);
     const completingArg = parts[0] === 'open' && parts.length > 1;
     const pool = completingArg ? Object.keys(LINKS) : NAMES;
     const frag = (completingArg ? parts[1] : parts[0] || '').toLowerCase();
     const hits = pool.filter(n => n.startsWith(frag));
     if (hits.length === 1) input.value = completingArg ? `open ${hits[0]}` : hits[0];
-    else if (hits.length > 1) say(esc(hits.join('  ')));
+    else if (hits.length > 1) say(esc(hits.join('  ')), 'dim');
+    paintGhost();
   }
 });
-form?.addEventListener('submit', (e) => {
+form?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const raw = input.value.trim();
   if (!raw) return;
-  hist.push(raw);
+  if (hist[hist.length - 1] !== raw) hist.push(raw);
+  saveHist();
   hIdx = -1;
   say(`<span class="ps">➜</span> <span class="bright">~</span> ${esc(raw)}`);
   input.value = '';
-  const [c, arg] = raw.toLowerCase().split(/\s+/);
-  if (c === 'clear') { out.replaceChildren(); return; }
-  say(CMDS[c] ? esc(CMDS[c](arg)) : `command not found: ${esc(raw)} — try help`);
+  paintGhost();
+  const [c, ...rest] = raw.toLowerCase().split(/\s+/);
+  const key = ALIAS[c] || c;
+  if (key === 'clear') { out.replaceChildren(); return; }
+  const fn = CMDS[key];
+  if (!fn) { say(`command not found: ${esc(raw)} - try <span class="amber">help</span>`, 'err'); return; }
+  try {
+    say(await fn(rest.join(' '), raw));
+  } catch {
+    say('<span class="err">that command hit an error. try again.</span>');
+  }
 });
 document.querySelector('.term')?.addEventListener('click', () => input?.focus());
+// boot line (skipped for reduced-motion users)
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const boot = say('', 'dim');
+  const msg = `yashshell ready - ${hist.length ? `${hist.length} commands remembered` : 'fresh session'} · type “help”.`;
+  let i = 0;
+  const tick = () => {
+    boot.textContent = msg.slice(0, ++i);
+    if (i < msg.length) setTimeout(tick, 12);
+  };
+  tick();
+}
 
 // interests → projects: click a domain (or `filter <domain>`) to narrow the grid
 const domainBtns = [...document.querySelectorAll('.domain[data-filter]')];
@@ -687,6 +774,29 @@ domainBtns.forEach(b => b.addEventListener('click', () => {
   go('projects');
 }));
 filterClear?.addEventListener('click', () => applyFilter(''));
+
+// live stats: refreshed daily at 05:30 IST by the Worker cron (GET /api/stats).
+// Hardcoded HTML above stays as the SEO/no-JS fallback.
+(async () => {
+  try {
+    const res = await fetch('/api/stats', { headers: { Accept: 'application/json' } });
+    if (!res.ok) return;
+    const s = await res.json();
+    window.__siteStats = s;
+    const set = (id, v) => { const el = document.getElementById(id); if (el && v !== undefined) el.textContent = v; };
+    const num = (n) => Number(n || 0).toLocaleString('en-US');
+    set('stat-tokens', s.tokens);
+    set('stat-spend', s.spend);
+    set('stat-loc', s.loc);
+    set('stat-repos', num(s.repos));
+    set('stat-repos-inline', num(s.repos));
+    set('stat-commits', num(s.commits));
+    set('stat-prs', num(s.prs));
+    set('stat-forks', num(s.forks));
+    set('stats-month-a', s.month);
+    set('stats-month-b', s.month);
+  } catch (_) { /* keep hardcoded fallback */ }
+})();
 
 // contact form -> Worker /api/contact (D1)
 document.getElementById('contact-form')?.addEventListener('submit', async (e) => {

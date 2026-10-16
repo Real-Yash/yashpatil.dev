@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@yashbytes">
 <meta name="twitter:creator" content="@yashbytes">
-<meta name="twitter:title" content="Blogs — Yash Patil">
+<meta name="twitter:title" content="Blogs - Yash Patil">
 <meta name="twitter:description" content="Notes on software engineering, AI, Linux infrastructure and building things properly.">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Real-Yash/yashpatil.dev@main/public/social/home.png">
 <meta name="twitter:image:alt" content="Blogs by Yash Patil, yashpatil.dev">
@@ -35,7 +35,7 @@ try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: lig
 </script>
 <style>
 :root{
-  --bg:#0b0d10; --surface:#111419;
+  --bg:#0b0d10; --surface:#111419; --surface-2:#0e1217;
   --line:#1f2630; --line-soft:#181e27;
   --text:#e8edf2; --muted:#9aa6b4; --faint:#626e7d;
   --accent:#8fd694;
@@ -48,7 +48,7 @@ try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: lig
   color-scheme:dark;
 }
 [data-theme="light"]{
-  --bg:#f7f6f3; --surface:#ffffff;
+  --bg:#f7f6f3; --surface:#ffffff; --surface-2:#efede8;
   --line:#e2dfd6; --line-soft:#ebe8e0;
   --text:#16191d; --muted:#59636e; --faint:#8b94a0;
   --accent:#18794e;
@@ -70,9 +70,10 @@ a{color:inherit}
 .site-nav a{font-family:var(--mono);font-size:13px;color:var(--muted);text-decoration:none;padding:7px 11px;border-radius:7px}
 .site-nav a:hover{color:var(--text);background:var(--hover)}
 .site-nav a.active{color:var(--accent)}
+#menu-btn{display:none;font-family:var(--mono);font-size:13px;color:var(--text);background:none;border:1px solid var(--line);border-radius:8px;padding:7px 13px;cursor:pointer}
 #theme-btn{font-family:var(--mono);font-size:13px;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:7px 13px;cursor:pointer;white-space:nowrap}
 #theme-btn:hover{color:var(--text);border-color:var(--faint)}
-.list{max-width:var(--measure);margin:0 auto;padding:72px 0 40px}
+.list{max-width:var(--max);margin:0 auto;padding:72px 0 40px}
 .kicker{font-family:var(--mono);font-size:13px;color:var(--accent);margin:0 0 14px}
 .list h1{font-size:clamp(2.2rem,6vw,3.2rem);line-height:1.06;letter-spacing:-.035em;margin:0 0 10px}
 .list .sub{color:var(--muted);margin:0 0 36px;font-size:1.02rem}
@@ -89,7 +90,7 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
 .foot nav{display:flex;gap:4px;flex-wrap:wrap}
 .foot nav a{font-family:var(--mono);font-size:12.5px;color:var(--faint);text-decoration:none;padding:6px 10px;border-radius:6px}
 .foot nav a:hover{color:var(--accent)}
-@media(max-width:680px){.wrap{width:calc(100% - 40px)}.list{padding:48px 0 32px}}
+@media(max-width:680px){.site-nav{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--surface-2);border-bottom:1px solid var(--line);padding:10px 24px 16px}.site-nav.open{display:flex}#menu-btn{display:block}.brand{font-size:12.5px}#theme-btn,#menu-btn{padding:7px 10px;font-size:12px}.wrap{width:calc(100% - 40px)}.list{padding:48px 0 32px}}
 </style>
 </head>
 <body>
@@ -97,13 +98,14 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="/"><b>yashpatil</b><span class="at">.dev</span></a>
-    <nav class="site-nav" aria-label="Sections">
+    <nav class="site-nav" id="site-nav" aria-label="Sections">
       <a href="/">home</a>
+      <a href="/about/">about</a>
+      <a href="/projects/">projects</a>
       <a href="/blogs/" class="active" aria-current="page">blogs</a>
-      <a href="/#projects">projects</a>
-      <a href="/#contact">contact</a>
     </nav>
     <button id="theme-btn" type="button" aria-label="Toggle color theme">☀ light</button>
+    <button id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">menu</button>
   </div>
 </header>
 
@@ -137,7 +139,6 @@ footer.site-foot{margin-top:88px;border-top:1px solid var(--line-soft);padding:2
         <a href="https://github.com/Real-Yash" target="_blank" rel="noreferrer">github</a>
         <a href="https://www.linkedin.com/in/yashbytes/" target="_blank" rel="noreferrer">linkedin</a>
         <a href="https://x.com/yashbytes" target="_blank" rel="noreferrer">x</a>
-        <a href="/blogs/">blogs</a>
       </nav>
     </div>
   </div>
@@ -154,6 +155,14 @@ const setTheme = (t) => {
 };
 paintThemeBtn();
 themeBtn?.addEventListener('click', () => setTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'));
+// mobile menu
+const menuBtn = document.getElementById('menu-btn');
+const siteNav = document.getElementById('site-nav');
+menuBtn?.addEventListener('click', () => {
+  const open = siteNav.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(open));
+});
+siteNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => siteNav.classList.remove('open')));
 </script>
 </body>
 </html>
